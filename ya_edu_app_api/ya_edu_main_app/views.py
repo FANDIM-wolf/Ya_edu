@@ -60,6 +60,8 @@ def create_event(request):
         date_of_end_request = request.POST.get('date_of_end_request')
         date_begin = request.POST.get('date_begin')
         date_end = request.POST.get('date_end')
+        theme =request.POST.get('theme')
+        type = request.POST.get('type')
 
         # Create a new Event object and assign the data
         event = Event(
@@ -72,7 +74,10 @@ def create_event(request):
             date_of_start_request=date_of_start_request,
             date_of_end_request=date_of_end_request,
             date_begin=date_begin,
-            date_end=date_end
+            date_end=date_end,
+            theme = theme,
+            type = type
+
         )
 
         # Save the Event object to the database
