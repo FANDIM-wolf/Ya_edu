@@ -28,6 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# REST FRAMEWORK
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 # Application definition
 
@@ -39,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'ya_edu_main_app',
     'django.contrib.staticfiles',
+    'rest_framework_simplejwt.token_blacklist',
+    'rest_framework_simplejwt',
     
 ]
 

@@ -34,5 +34,12 @@ class EventUser(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(User_app, on_delete=models.CASCADE)
     date_joined = models.DateField()
+    status = models.CharField(max_length=50)
+
+class Token_and_User(models.Model):
+    user_id = models.ForeignKey(User_app, on_delete=models.CASCADE)
+    token = models.CharField(max_length=450)
+
+
     
 
