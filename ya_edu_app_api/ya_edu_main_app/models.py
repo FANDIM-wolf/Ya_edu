@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -39,6 +40,11 @@ class EventUser(models.Model):
 class Token_and_User(models.Model):
     user_id = models.ForeignKey(User_app, on_delete=models.CASCADE)
     token = models.CharField(max_length=450)
+
+class EventImage(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    name_of_image = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images')
 
 
     
